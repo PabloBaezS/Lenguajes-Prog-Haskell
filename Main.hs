@@ -22,11 +22,11 @@ main :: IO [Int]
 main = do
   putStrLn ""
   putStrLn ("¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ PARCIAL HASKELL ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬")
-  putStrLn "|  Inserta tus numeros separados por espacios (e.g. 4 5 3 2):   |"
+  --putStrLn "|  Inserta tus numeros separados por espacios (e.g. 4 5 3 2):   |"
   putStr "|  --> "
-  line <- getLine
-  putStrLn "|  La lista con duplicados es:                                  |"
-  let num = return $ map read (words line)
-  num -> numeros :: Int
-  print(elimRepLista num)
+  --line <- getLine
+  putStrLn "|  La lista sin duplicados es:                                  |"
+  --let num = return $ map read (words line)
+  --num -> numeros :: Int
+  print(elimRepLista [1,2,3,4,5,6,1,2,3,4,5,6])
 -- El words divide el input cada espacio en blanco en diferentes posiciones y el map retorna una lista de dichos valores
