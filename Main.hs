@@ -11,11 +11,11 @@ elimRepLista :: Ord a => [a] -> [a]
 elimRepLista = elimRepLista2 Set.empty
   where -- Keyword para dividir la logica de las operaciones a realizar, no es necesario pero sirve para hacer mas entendible y rapido el codigo
     elimRepLista2 _ [] = [] 
--- El "_" es un no interesa el resto, sirve para solo tener en cuenta uno de los tipos siguientes, dejando de lado el resto ([])
-    elimRepLista2 a (b : c) =
-      if Set.member b a
-        then elimRepLista2 a c
-        else b : elimRepLista2 (Set.insert b a) c
+-- El "_" es un: "no interesa el resto", sirve para solo tener en cuenta el primer elemento de la lista, dejando de lado el resto ([])
+    elimRepLista2 a (b : c) =           -- (b:c) significan los elementos de la lista, la b representa la cabeza, la c la cola(resto)
+      if Set.member b a   --Aquí compara el elemento en el que el programa está parado con el elemento de la cabeza
+        then elimRepLista2 a c    --si el elemento ya está en la nueva lista, pues lo deja pasar
+        else b : elimRepLista2 (Set.insert b a) c    -- si el elemento no está en la lista, lo agrega, partiendo desde b(la cabeza) hasta la segunda posición (c,la cola)
 
 
 main :: IO [Int]
